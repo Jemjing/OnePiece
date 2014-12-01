@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>onepiece</title>
+		<link rel="stylesheet" href="css/mui.css" />
+		<script src="js/mui.js"></script>
+		<style type="text/css">
+		
+			#list {
+				/*避免导航边框和列表背景边框重叠，看起来像两条边框似得；*/
+				
+				margin-top: -1px;
+				
+			}
+			.mui-bar-tab .mui-tab-item {
+				background-color:#FFFFFF ;
+				color: #FC7F7F;
+			}
+			.mui-bar-tab .mui-tab-item.mui-active {
+			  	color: #FC7F7F;
+			}
+			span.mui-icon-recommend {
+				display: inline-block;
+				background-image: url(img/nav-icon-recommend.png);
+				background-size: cover;
+				margin-top: 4px;
+				margin-bottom: -4px;
+			}
+			.mui-icon-hot {
+				display: inline-block;
+				background-image: url(img/nav-icon-hot.png);
+				background-size: cover;
+				margin-top: 4px;
+				margin-bottom: -4px;
+			}
+			.mui-icon-hold {
+				display: inline-block;
+				background-image: url(img/nav-icon-hold.png);
+				background-size: cover;
+				margin-top: 4px;
+				margin-bottom: -4px;
+			}
+			.mui-icon-new {
+				display: inline-block;
+				background-image: url(img/nav-icon-new.png);
+				background-size: cover;
+				margin-top: 4px;
+				margin-bottom: -4px;
+			}
+			.mui-icon-class {
+				display: inline-block;
+				background-image: url(img/nav-icon-class.png);
+				background-size: cover;
+				margin-top: 4px;
+				margin-bottom: -4px;
+			}
+			.mui-table-view {
+				padding: 0px !important;
+				margin: 0px;
+			}
+			li.mui-table-view-cell {
+				display: block;
+				padding: 0px;
+			}
+			li.mui-table-view-cell .mui-table-view-pic {
+				display: block;
+				padding: 0px;
+			}
+			.mui-table-view-text {
+				background-image: url(img/bottom.png);
+				background-size: cover;
+			}
+			.mui-table-view-text p {
+			 	display: inline-block;
+				padding: 10px 10px 6px 10px;
+				font-size: 14px;
+				color: #FFFFFF;
+				text-shadow: 3px 3px 3px #797979;
+			}
+			.mui-table-view-icon {
+				display: inline-block;
+				float: right;
+				font-size: 13px;
+				color: #FFFFFF;
+				text-shadow: 3px 3px 2px #797979;
+				margin: 10px 10px 0px 0px;
+			}
+			.mui-table-view-icon span {
+				display: inline-block;
+				width: 23px;
+				height: 23px;
+				margin: -6px 3px 0px 0px;
+			}
+			#pic-icon-pen {
+				background-size: cover;
+				background-image: url(img/pic-icon-pen.png);
+				vertical-align: middle;
+			}
+			#pic-icon-xin {
+				background-size: cover;
+				background-image: url(img/pic-icon-xin.png);
+				vertical-align: middle;
+			}
+			.pic-icon-text {
+	`			vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mui-content">
+		
+		<ul class="mui-table-view" id="list">
+			<li class="mui-table-view-cell">
+				<a class="mui-table-view-pic" href="#"><img src="img/pic (4).jpg" width="100%"></a>
+				<div class="mui-table-view-text">
+					<p>夏目大人</p>
+					<div class="mui-table-view-icon">
+						<span id="pic-icon-pen"></span><span class="pic-icon-text">93%</span>
+						<span id="pic-icon-xin"></span><span class="pic-icon-text">1113</span>
+					</div>
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-table-view-pic" href="#"><img src="img/pic (3).jpg" width="100%"></a>
+				<div class="mui-table-view-text">
+					<p>古剑奇谭</p>
+					<div class="mui-table-view-icon">
+						<span id="pic-icon-pen"></span><span class="pic-icon-text">68%</span>
+						<span id="pic-icon-xin"></span><span class="pic-icon-text">1083</span>
+					</div>
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-table-view-pic" href="#"><img src="img/pic (2).jpg" width="100%"></a>
+				<div class="mui-table-view-text">
+					<p>古剑奇谭</p>
+					<div class="mui-table-view-icon">
+						<span id="pic-icon-pen"></span><span class="pic-icon-text">23%</span>
+						<span id="pic-icon-xin"></span><span class="pic-icon-text">970</span>
+					</div>
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<a class="mui-table-view-pic" href="#"><img src="img/pic (1).jpg" width="100%"></a>
+				<div class="mui-table-view-text">
+					<p>古剑奇谭</p>
+					<div class="mui-table-view-icon">
+						<span id="pic-icon-pen"></span><span class="pic-icon-text">19%</span>
+						<span id="pic-icon-xin"></span><span class="pic-icon-text">893</span>
+					</div>
+				</div>
+			</li>
+		</ul>
+
+			
+		<nav class="mui-bar mui-bar-tab">
+	<a id="defaultTab" class="mui-tab-item mui-active " href="index.html">
+		<span class="mui-icon mui-icon-recommend"></span>
+		<span class="mui-tab-label">推荐</span>
+	</a>
+	<a class="mui-tab-item" href="#">
+		<span class="mui-icon mui-icon-hot"></span>
+		<span class="mui-tab-label">热门</span>
+	</a>
+	<a class="mui-tab-item" href="#">
+		<span class="mui-icon mui-icon-hold"></span>
+		<span class="mui-tab-label">发起</span>
+	</a>
+	<a class="mui-tab-item" href="#">
+		<span class="mui-icon mui-icon-new"></span>
+		<span class="mui-tab-label">最新</span>
+	</a>
+	<a class="mui-tab-item" href="#">
+		<span class="mui-icon mui-icon-class"></span>
+		<span class="mui-tab-label">分类</span>
+	</a>
+</nav>
+
+</div>
+<script type="text/javascript" charset="utf-8">
+
+	var subpages = ['tab-webview-subpage-phone.html','tab-webview-subpage-chat.html','tab-webview-subpage-contact.html','tab-webview-subpage-map.html'];
+	var subpage_style = {
+		top: '48px',
+		bottom: '50px'
+	};
+	//创建子页面，首个选项卡页面显示，其它均隐藏；
+	mui.plusReady(function(){
+		var self = plus.webview.currentWebview();
+		for(var i=0;i<4;i++){
+			var sub = plus.webview.create(subpages[i],subpages[i],subpage_style);
+			if(i>0){
+				sub.hide();
+			}
+			self.append(sub);
+		}
+	});
+	
+	//当前激活选项，默认为第一个；
+	var activeTab = subpages[0];
+	//选项卡点击事件
+	mui('.mui-bar-tab').on('tap', 'a', function(e) {
+		var targetTab = this.getAttribute('href');
+		if (targetTab == activeTab) {
+			return;
+		}
+		
+		//先隐藏当前的
+		plus.webview.hide(activeTab);
+		//再显示目标
+		plus.webview.show(targetTab);
+		//更改当前活跃的选项卡
+		activeTab = targetTab;
+	});
+</script>
+
+
+
+
+		<script>
+			(function($) {
+				mui.init({
+					preloadLimit: 3, //同时并存的预加载窗口数量
+					swipeBack: false,
+				});
+				$.plusReady(function() {
+					plus.navigator.closeSplashscreen();
+					//首页返回键处理
+					//处理逻辑：1秒内，连续两次按返回键，则退出应用；
+					var first = null;
+					plus.key.addEventListener('backbutton', function(){
+						//首次按键，提示‘再按一次退出应用’
+						if(!first){
+							first = new Date().getTime();
+							mui.toast('再按一次退出应用');
+							setTimeout(function(){
+								first = null;
+							},1000);
+						}else{
+							if(new Date().getTime()-first<1000){
+								plus.runtime.quit();
+							}
+						}
+					}, false);
+					//预加载下拉刷新
+					$.preload({
+						id:"examples/pullrefresh-main.html",
+						url:"examples/pullrefresh-main.html",
+						styles:{
+							popGesture:"hide"
+						}
+					});
+					//预加载共用父webview
+					var template = $.preload({
+						url:'examples/template.html',
+						id:'demoTemplate',
+						styles:{
+							popGesture:"hide"
+						}
+					});
+					////预加载共用子webview
+					var subWebview = $.preload({
+						url:'examples/accordion.html',
+						id:'template_sub',
+						styles:{
+							top: '48px',
+							bottom: '0px'
+						}
+					});
+					var waiting = null;
+					subWebview.addEventListener('loaded', function() {
+						setTimeout(function(){
+							subWebview.show();	
+						},50);
+					});
+					subWebview.hide();
+					
+					//iOS平台支持侧滑关闭，父窗体侧滑隐藏后，同时需要隐藏子窗体；
+					if($.os.ios){
+						template.addEventListener('hide',function () {
+							subWebview.hide("none");
+						});
+					}
+
+					template.append(subWebview);
+					
+					if ($.os.android) {
+						var list = document.querySelectorAll('.ios-only');
+						if (list) {
+							for (var i = 0; i < list.length; i++) {
+								list[i].style.display = 'none';
+							}
+						}
+					}
+
+					$('#list').on('tap', 'a', function() {
+						var id = this.getAttribute('href');
+						var type = this.getAttribute("open-type");
+						if(type=="common"){
+							if (~id.indexOf('offcanvas-')) {
+								var pop = ~id.indexOf('offcanvas-with-right')?"close":"none";
+								mui.openWindow({
+									id: id,
+									url: this.href,
+									styles: {
+										zindex: 9999,
+										popGesture:pop
+									},
+									waiting:{
+										autoShow:false
+									}
+								});
+							} else if(~id.indexOf('pullrefresh')){
+								mui.openWindow({http://127.0.0.1:8020/OPiece/onepiece.html#
+									id: id,
+									url: id,
+									preload:true
+								});
+							}else{
+								mui.openWindow({
+									id: id,
+									url: this.href,
+									waiting:{
+										autoShow:false
+									}
+								});
+							}
+						}else{
+							if (id&&~id.indexOf('.html')) {
+								
+								var title = this.innerText;
+								template.evalJS("with(document.getElementById('title')){innerHTML='" + title + "';className='mui-title mui-fadein';};");
+								if(subWebview.getURL()==this.href){
+									subWebview.show();
+								}else{
+									subWebview.loadURL(this.href);
+								}
+								template.show('slide-in-right', 150);
+							}
+						}
+					});
+				});
+			})(mui);
+		</script>
+	</body>
+</html>

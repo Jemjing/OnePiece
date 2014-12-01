@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.css" rel="stylesheet"/>
+    <style type="text/css">
+
+		body{
+			background-image:url(img/menu-bg.jpg);	
+			background-size:cover;
+		}
+		p{
+			font-family: arial;
+			color:#ffffff;
+		}
+		a{
+			text-decoration:none;
+		}
+		ul{
+			font-family: "微软雅黑";
+			margin:auto;
+			padding:0;
+		}
+		li{
+			list-style-type:none;
+		}
+		#name{
+			margin-top:10%;
+			margin-left:14%;
+			font-size:180%;
+		}
+		#welcome{
+
+			margin-bottom:10%;
+			margin-left:14%;
+			font-size:100%;
+		}
+	    .headborder{
+			border: 5px solid rgba(255,255,255,0.5);
+			border-radius: 50px;
+			width:98px;
+			height: 98px;
+			margin: auto;
+			margin-bottom:10%;
+		}
+		.personhead{
+			margin: auto;
+			width:88px;
+			height:88px;
+			background-image:url(img/head.jpg);
+			background-position:center;
+			background-size:cover;
+			border-radius: 50px;
+		}
+		.personhead img{
+			width:50%;
+			height:50%;
+		}
+		.personal{
+			margin-left:10%;
+		}
+		
+		.personal img{
+			width:22%;
+			vertical-align:middle;
+		}
+		.personal span{
+			font-size:100%;
+			color:#ffffff;
+			vertical-align:middle;
+			
+		}
+	</style>
+</head>
+<body>
+	<ul class="mui-table-vieww">
+	<li>
+		<p id="name">用户姓名</p>
+	</li>
+	<li>
+		<p id="welcome">welcome!</p>
+	</li>
+
+	<li class="headborder">
+		<div class="personhead"></div>
+	</li>
+	<li class="personal">
+		<a target="_blank" href="#">
+			<img src="img/menu-collect.png" />
+			<span>我的收藏</span>
+		</a>
+	</li>
+	<li class="personal">
+		<a target="_blank" href="#">
+			<img src="img/menu-join.png" />
+			<span>我参与的</span>
+		</a>
+	</li>
+	<li class="personal">
+		<a target="_blank" href="#">
+			<img src="img/menu-launch.png" />
+			<span>我发起的</span>
+		</a>
+	</li>
+	<li class="personal">
+		<a target="_blank" href="#">
+			<img src="img/menu-setting.png" />
+			<span>设置</span>
+		</a>
+	</li>
+	</ul>
+	<script type="text/javascript" charset="utf-8">
+		var subWebview=null,template=null,index=null;
+		mui.plusReady(function () {
+			index = plus.webview.currentWebview().opener();
+		})
+		mui('.mui-table-vieww').on('tap', 'a', function() {
+			if(subWebview==null){
+				subWebview = plus.webview.getWebviewById("template_sub");
+				template = plus.webview.getWebviewById("demoTemplate");
+			}
+			
+			var title = this.innerText;
+			template.evalJS("with(document.getElementById('title')){innerHTML='" + title + "';className='mui-title mui-fadein';};");
+			if(subWebview.getURL()==this.href){
+				subWebview.show();
+			}else{
+				subWebview.loadURL(this.href);
+			}
+			template.show('slide-in-right', 150);
+			
+			//然后要关闭侧滑菜单；
+			index.evalJS("toggleMenu()");
+		});
+	  
+	</script>
+</body>
+
+</html>

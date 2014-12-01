@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.js"></script>
+    <link href="css/mymui.css" rel="stylesheet"/>
+    <style type="text/css">
+    	.mui-bar .mui-title
+    	{
+    		color: #FC7F7F;
+    	}
+    </style>
+</head>
+<body> 
+<header class="mui-bar mui-bar-nav">
+	<a class="mui-action-menu mui-icon mui-icon-bars mui-pull-left"></a>
+	<h1 class="mui-title">推荐</h1>
+</header>
+	<script>
+			mui.init({
+				swipeBack : false,
+				subpages : [{
+					id : 'onepiece',
+					url : 'onepiece.html',
+					styles : {
+						top : '48px',
+						bottom : 0,
+						bounce :'vertical'
+						//scrollIndicator : "none"
+					}
+				}]
+			});
+			
+			var menu = null,showMenu = false;
+			mui.plusReady(function() {
+				//处理侧滑导航，为了避免和子页面初始化等竞争资源，延迟加载侧滑页面；
+				setTimeout(function () {
+					menu= mui.preload({
+						id: 'index-menu',
+						url: 'index-menu.html',
+						styles: {
+							left: 0,
+							width: '70%',
+							zindex: -1
+						},
+						show:{
+							aniShow:'none'
+						}
+					});
+				},500);
+				
+			});
+			
+			document.querySelector('.mui-icon-bars').addEventListener('tap', toggleMenu);
+			function toggleMenu(){
+				//控制侧滑菜单webview的显示、隐藏；
+				if(showMenu){
+					//侧滑菜单已显示，则等主窗体移动完毕后，再隐藏自己；
+					setTimeout(function () {
+						menu.hide();
+					},300);			
+				}else{
+					//侧滑菜单处于隐藏状态，则立即显示出来；
+					menu.show();
+				}
+				//主窗体开始侧滑；
+				mui.currentWebview.setStyle({
+					left: showMenu ? '0' : '70%',
+					transition: {
+						duration: 200
+					}
+				});
+				showMenu = !showMenu;
+			}
+			
+		</script>
+</body>
+</html>
